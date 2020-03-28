@@ -1,18 +1,19 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+
 def index(request):
     # here we display the feed
-    return HttpResponse("This is the home page")
+    return render(request, 'coop/index.html')
 
 def profile(request):
-    return HttpResponse("This is the profile page")
+    return render(request, 'coop/profile.html')
 
 def feed(request):
     return HttpResponse("This is the feed page")
 
 def upload(request):
-    return HttpResponse("This is the page to upload notes documents")
+    return render(request, 'coop/upload.html')
 
 def settings(request):
-    return HttpResponse("This is the settings page")
+    return render(request, 'coop/settings.html')
