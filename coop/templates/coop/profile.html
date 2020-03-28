@@ -1,10 +1,11 @@
 
 {% extends 'coop/base.html' %}
 {% block content %}
-<div class = 'alert alert-primary mt-3'>
+
+<div class = "alert alert-danger mt-3 ml-3 mr-3">
 <div class="content-section">
   <div class="media">
-    <img class="rounded-circle account-img" src="{{ user.socialaccount_set.all.0.get_avatar_url }}">
+    <img class="rounded-circle account-img mr-3" src="{{ user.socialaccount_set.all.0.get_avatar_url }}" width = 75px height = 75px >
     <div class="media-body">
       <h2 class="account-heading">Welcome, {{user.username}}</h2>
       <p class = "text-secondary">{{user.email}}</p>
