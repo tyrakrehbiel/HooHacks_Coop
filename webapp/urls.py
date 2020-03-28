@@ -20,4 +20,5 @@ urlpatterns = [
     path('', include('coop.urls')),
     # path('coop/', include('coop.urls')),
     path('admin/', admin.site.urls),
+    path('accounts/',include('allauth.urls')),
 ]
