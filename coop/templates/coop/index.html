@@ -1,12 +1,7 @@
-
+{% extends 'coop/base.html' %}
 {% load socialaccount %}
 {% providers_media_js %}
-<html>
-<head>
-    <title>Google Registration</title>
-</head>
-<body>
-    <a href = "{% provider_login_url "google" %}">Login with Google</a>
-</body>
 
-</html>
+{% block content %}
+   
+{% endblock %}
