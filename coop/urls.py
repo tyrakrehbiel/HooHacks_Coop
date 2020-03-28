@@ -4,8 +4,8 @@ from . import views
 from django.views.generic import TemplateView
 
 urlpatterns = [
-    path('',TemplateView.as_view(template_name = 'coop/index.html'), name='coop-home'),
-    #path('', include('coop.urls')),
-    # path('coop/', include('coop.urls')),
-    path('admin/', admin.site.urls),
-    path('accounts/',include('allauth.urls')),
+    path('', views.index, name='index'),
+    path('upload/', views.upload, name='upload'),
+    path('settings/', views.settings, name='settings'),
+    path('profile/', views.profile, name='profile'),
+]
