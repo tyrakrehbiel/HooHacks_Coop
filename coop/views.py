@@ -13,7 +13,7 @@ def profile(request):
     return render(request, 'coop/profile.html')
 
 def feed(request):
-    return HttpResponse("This is the feed page")
+    return render(request, 'coop/feed.html')
 
 def upload(request):
     return render(request, 'coop/upload.html')
@@ -49,3 +49,5 @@ def delete_note(request, pk):
 def about(request):
     return render(request, 'coop/about.html')
 
+def help(request):
+    return render(request, 'coop/help.html')
