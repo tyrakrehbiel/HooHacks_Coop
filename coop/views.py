@@ -15,19 +15,17 @@ def profile(request):
 def feed(request):
     return render(request, 'coop/feed.html')
 
-def upload(request):
-    return render(request, 'coop/upload.html')
-
 def settings(request):
     return render(request, 'coop/settings.html')
 
-
+# Search engine notes page
 def notes_list(request):
     notes = Notes.objects.all()
     return render(request, 'coop/notes_list.html', {
         'notes': notes
     })
 
+# uploading a note
 def upload_note(request):
     if request.method == 'POST':
         form = NoteForm(request.POST, request.FILES)
@@ -40,6 +38,7 @@ def upload_note(request):
         'form': form
     })
 
+# delete a note
 def delete_note(request, pk):
     if request.method == 'POST':
         note = Notes.objects.get(pk=pk)
