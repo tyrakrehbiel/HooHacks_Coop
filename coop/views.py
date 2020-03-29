@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 
 from .forms import NoteForm
-from .models import Notes
+from .models import Notes, Profile
 
 
 def index(request):
@@ -29,6 +29,11 @@ def notes_list(request):
     notes = Notes.objects.all()
     return render(request, 'coop/notes_list.html', {
         'notes': notes
+    })
+def profile_list(request):
+    profile = Profile.objects.all()
+    return render(request, 'coop/profile.html', {
+        'profile': profile
     })
 
 # for user specific notes feed
