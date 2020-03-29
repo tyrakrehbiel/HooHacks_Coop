@@ -2,3 +2,24 @@
 {% load static %}
 {% load socialaccount %}
 {% providers_media_js %}
+
+{% block content %}
+<div class="container">
+  <h1>
+    <center>
+      Search For Notes
+      <img src="{% static 'images/coop.png' %}" width=80px height=80px>
+      <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+      <p></p>
+
+      <label for="linkButton">Search By: </label>
+      <button class="btn btn-primary" type="submit" id="linkButton">Course</button>
+      <button class="btn btn-primary" type="submit">User</button>
+      <button class="btn btn-primary" type="submit">Lecture</button>
+      <button class="btn btn-primary" type="submit">Time</button>
+      <button class="btn btn-primary" type="submit">School</button>
+    </center>
+  </h1>
+</div>
+
+{% endblock %}
