@@ -9,12 +9,14 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('settings/', views.settings, name='settings'),
     path('profile/', views.profile, name='profile'),
+    path('profile/myNotes/', views.userNotes, name='userNotes'),
     path('feed/', views.feed, name='feed'),
     path('notes/', views.notes_list, name='notes_list'),
     path('notes/upload/', views.upload_note, name='upload_note'),
     path('notes/<int:pk>/', views.delete_note, name='delete_note'),
     path('about/', views.about, name='about'),
     path('help/', views.help, name='help'),
+
 ]
 
 if settings.DEBUG:

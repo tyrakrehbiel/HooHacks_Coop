@@ -28,11 +28,20 @@ def notes_list(request):
         'notes': notes
     })
 
+def userNotes(request):
+    notes = Notes.objects.filter(created_by=request.user.username)
+    return render(request, 'coop/userNotes.html', {
+        'notes': notes
+    })
+
 def upload_note(request):
     if request.method == 'POST':
         form = NoteForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            fs = form.save()
+            # fs.user= request.user
+            fs.created_by = request.user.username
+            fs.save()
             return redirect('notes_list') # Redirects to notes list after uploading
     else:
         form = NoteForm()
