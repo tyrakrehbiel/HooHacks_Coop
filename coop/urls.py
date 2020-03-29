@@ -10,6 +10,7 @@ urlpatterns = [
     path('upload/', views.upload, name='upload'),
     path('settings/', views.settings, name='settings'),
     path('profile/', views.profile, name='profile'),
+     path('about/', views.about, name='about'),
 ] 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -17,3 +17,6 @@ def upload(request):
 
 def settings(request):
     return render(request, 'coop/settings.html')
+
+def about(request):
+    return render(request, 'coop/about.html')
