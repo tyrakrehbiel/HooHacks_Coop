@@ -4,9 +4,41 @@
 {% providers_media_js %}
 
 {% block content %}
+<div id = "slides" class = "carousel slide" data-ride = "carousel">
+<ul class = "carousel-indicators">
+    <li data-target = "#slides" data-slide-to="0" class ="active"></li>
+    <li data-target = "#slides" data-slide-to="1"></li>
+    <li data-target = "#slides" data-slide-to="2"></li>
+</ul>
+<div class = "carousel-inner">
+    <div class = "carousel-item active">
+        <img src="{% static 'images/farm1.jpg' %}" width = 100% height = 500px >
+        <div class = "carousel-caption">
+            <h1 class = "display-2">Welcome to Coop</h1>
+            <h3>A simple and effective note sharing app</h3>
+        </div>
+    </div>
+    <div class = "carousel-item">
+        <img src="{% static 'images/notes1.jpg' %}" width = 100% height = 500px >
+        <div class = "carousel-caption">
+            <h3>Share and view notes with other students</h3>
+        </div>
+    </div>
+    <div class = "carousel-item">
+        <img src="{% static 'images/chickens.jpg' %}" width = 100% height = 500px >
+        <div class = "carousel-caption">
+            <h1 class = "display-2">Join the Coop Today</h1>
+            <h3>Share and view notes with other students</h3>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}
+
+<!--
 <div class="container">
     <h1>
         <center>Welcome to Coop <img src="{% static 'images/coop.png' %}" width=85px height=85px></center>
     </h1>
 </div>
-{% endblock %}
+-->

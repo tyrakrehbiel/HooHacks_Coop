@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,500,700');
+
 /* The sidebar menu */
 .sidenav {
     margin-top: 61px;
@@ -56,5 +58,10 @@ span {
     color: #ffffff;
   }
   h1 {
-    color: #DB4F39;
+    font-weight: bold;
+    font-family: Quicksand;
+    color: rgb(255, 255, 255);
+  }
+  h3 {
+    font-family: Quicksand;
   }
