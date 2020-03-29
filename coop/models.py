@@ -8,7 +8,7 @@ class Notes(models.Model):
     topic = models.CharField(max_length=100)
     description = models.CharField(max_length=1000)
     noteFile = models.FileField(upload_to = 'notes/')
-    created_by = models.CharField(max_length=30, default='none')
+    created_by = models.CharField(max_length=30, default='Anonymous User')
     # user = models.OneToOneField(User, on_delete = models.CASCADE)
 
 

@@ -22,7 +22,7 @@
         </div>
         <div class="card-body">
           <h5 class="card-title">Topic: {{note.topic}}</h5>
-          <p class="card-text">Author: {{note.author}}</p>
+          <p class="card-text">Author: {{note.created_by}}</p>
           <p class="card-text">Description: {{note.description}}</p>
           <a href="{{ note.noteFile.url }}" class="btn btn-primary btn-sm">Download Notes</a>
           <!-- <form action="{% url 'delete_note' note.pk %}" method="post">
