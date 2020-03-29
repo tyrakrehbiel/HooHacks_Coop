@@ -1,8 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-
-# Create your models here.
 class Notes(models.Model):
     courseName = models.CharField(max_length=100)
     topic = models.CharField(max_length=100)
@@ -15,6 +13,8 @@ class Notes(models.Model):
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete = models.CASCADE)
     pfp = models.ImageField(default='default.jpg',upload_to='profile_pics')
+    bio = models.TextField(default='I\'m ready to learn!', max_length=500)
+    earnings = models.IntegerField()
 
     def __str__(self):
         return f'{self.user.username} Profile'
