@@ -1,8 +1,6 @@
 {% load static %}
 {% load socialaccount %}
 {% providers_media_js %}
-<!-- This will be the container holding things such as the
-nav bar, footer, etc -->
 
 <!DOCTYPE html>
 
@@ -29,7 +27,7 @@ nav bar, footer, etc -->
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #DB4F39;">
-    <a class="navbar-brand" href="#">Coop
+    <a class="navbar-brand" href="/">Coop
       <img src="{% static 'images/coop.png' %}" width = 35px height = 35px >
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
@@ -38,7 +36,7 @@ nav bar, footer, etc -->
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-        <li class="nav-item active">
+        <!-- <li class="nav-item active">
           <a class="nav-link" href="/">Home <span class="sr-only">(current)</span>
             <img src="/assets/img/bootstrap.svg" alt="" width="32" height="32" title="Bootstrap">
             <svg class="bi bi-house-door" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -46,6 +44,15 @@ nav bar, footer, etc -->
               <path fill-rule="evenodd" d="M13 2.5V6l-2-2V2.5a.5.5 0 01.5-.5h1a.5.5 0 01.5.5z" clip-rule="evenodd"/>
             </svg>
           </a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" href="feed/">Feed</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="notes/">Search Notes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="about/">About</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="about/"> About
@@ -80,6 +87,7 @@ nav bar, footer, etc -->
     </div>
     </div>
   </nav>
+
   {% block content %}
 
   {% endblock %}
