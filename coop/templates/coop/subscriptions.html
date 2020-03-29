@@ -11,20 +11,12 @@
     <a href="profile/settings/">Settings</a>
   </div>
 </div>
-<div class="container">
-  <h1>
-    <center>
-      Upload a Note
-    </center>
-  </h1>
-</div>
-<div class="container">
-  <center>
-    <form method="post" enctype="multipart/form-data">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit" class="btn btn-primary">Upload File</button>
-    </form>
-  </center>
+<div class = "container col-md-9">
+  <div class = "alert alert-danger mt-3 ml-4">
+    <div class="media-body">
+      <h2 class="account-heading">Subscriptions</h2>
+    </div>
+  </div>
+  <!-- FORM HERE -->
 </div>
 {% endblock %}
