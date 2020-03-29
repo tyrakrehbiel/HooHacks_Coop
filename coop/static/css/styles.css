@@ -23,7 +23,7 @@
   
   /* When you mouse over the navigation links, change their color */
   .sidenav a:hover {
-    color: #000000;
+    color: #992b00;
   }
   
   /* Style page content */
@@ -43,3 +43,15 @@
     margin-left: auto;
     margin-right: auto;
  }
+
+
+ body {
+    background-color: rgb(233, 228, 200);
+  }
+
+span {
+    padding: 6px;
+    text-decoration: none;
+    font-size: 17px;
+    color: #ffffff;
+  }

@@ -2,15 +2,18 @@
 {% extends 'coop/base.html' %}
 
 {% block content %}
+<div class = "container">
 <div class="sidenav">
-  <img class="rounded-circle account-img center-block" src="{{ user.socialaccount_set.all.0.get_avatar_url }}" width = 55px height = 55px > 
-
+  <img class="rounded-circle account-img ml-3" src="{{ user.socialaccount_set.all.0.get_avatar_url }}" width = 55px height = 55px >
+  <span> {{user.username}}</span> 
   <a href="#">Feed</a>
   <a href="#">Subscriptions</a>
   <a href="#">Search Notes</a>
   <a href="#">Upload Notes</a>
 </div>
-<div class = "alert alert-danger mt-3 ml-4 mr-3">
+</div>
+<div class = "container col-md-9">
+<div class = "alert alert-danger mt-3 ml-4">
 <div class="content-section">
   <div class="media">
     <img class="rounded-circle account-img mr-3" src="{{ user.socialaccount_set.all.0.get_avatar_url }}" width = 75px height = 75px >
@@ -20,6 +23,7 @@
     </div>
   </div>
   <!-- FORM HERE -->
+</div>
 </div>
 </div>
 
