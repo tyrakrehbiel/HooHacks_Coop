@@ -15,9 +15,10 @@ urlpatterns = [
 
     path('profile/', views.profile, name='profile'),
     path('profile/upload/', views.upload_note, name='upload_note'),
-    # path('profile/myNotes/', views.),
+    path('profile/userNotes/', views.userNotes, name='userNotes'),
     path('profile/settings/', views.settings, name='settings'),
-    
+    path('profile/subscriptions/', views.subscriptions, name='subscriptions'),
+
     path('feed/', views.feed, name='feed'),
 ]
 
