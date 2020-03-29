@@ -1,6 +1,10 @@
-
 {% extends 'coop/base.html' %}
 
 {% block content %}
-  <h2>This is from the uploads template</h2>
+  <h2>Upload a Note</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Upload File</button>
+  </form>
 {% endblock %}
