@@ -13,10 +13,10 @@ urlpatterns = [
 
     path('notes/', views.notes_list, name='notes_list'),
     path('notes/upload_note/', views.upload_note, name='upload_note'),
-    path('notes/<int:pk>/', views.delete_note, name='delete_note')
-]
+    path('notes/<int:pk>/', views.delete_note, name='delete_note'),
+
 
      path('about/', views.about, name='about'),
-] 
+]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
