@@ -21,6 +21,7 @@ def upload(request):
 def settings(request):
     return render(request, 'coop/settings.html')
 
+
 def notes_list(request):
     notes = Notes.objects.all()
     return render(request, 'coop/notes_list.html', {
@@ -44,3 +45,7 @@ def delete_note(request, pk):
         note = Notes.objects.get(pk=pk)
         note.delete()
         return redirect('notes_list')
+
+def about(request):
+    return render(request, 'coop/about.html')
+
