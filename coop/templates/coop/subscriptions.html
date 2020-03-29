@@ -1,0 +1,70 @@
+{% extends 'coop/base.html' %}
+
+{% block content %}
+<div class = "container">
+  <div class="sidenav">
+    <img class="rounded-circle account-img ml-3" src="{{ user.socialaccount_set.all.0.get_avatar_url }}" width = 55px height = 55px >
+    <span> {{user.username}}</span>
+    <a href="profile/subscriptions/">Subscriptions</a>
+    <a href="profile/userNotes/">My Notes</a>
+    <a href="profile/upload/">Upload Notes</a>
+    <a href="profile/settings/">Settings</a>
+  </div>
+</div>
+<div class = "container col-md-9">
+  <div class = "alert alert-danger mt-3 ml-4">
+    <div class="media-body">
+      <h2 class="account-heading">Subscriptions</h2>
+    </div>
+  </div>
+  <!-- FORM HERE -->
+</div>
+
+<div class = "container col-md-9">
+<div class = "alert alert-danger mt-3 ml-4">
+<div class="content-section">
+  <div class="media">
+    <img class="rounded-circle account-img mr-3" src="https://engineering.virginia.edu/sites/default/files/styles/faculty_headshot/public/Brunelle%2CN.jpg?itok=vJ0XX81C" width = 75px height = 75px >
+    <div class="media-body">
+      <h2 class="account-heading">Nathan Brunelle</h2>
+      <p class = "text-secondary">njb2b@virginia.edu</p>
+      <button type="submit" class="btn btn-primary btn-sm">View Profile</button>
+      <button type="submit" class="btn btn-danger btn-sm">Unsubscribe</button>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<div class = "container col-md-9">
+<div class = "alert alert-danger mt-3 ml-4">
+<div class="content-section">
+  <div class="media">
+    <img class="rounded-circle account-img mr-3" src="https://engineering.virginia.edu/sites/default/files/styles/faculty_headshot/public/small.jpg?itok=VsPBmqqo" width = 75px height = 75px >
+    <div class="media-body">
+      <h2 class="account-heading">Robbie Hott</h2>
+      <p class = "text-secondary">jh2jf@virginia.edu</p>
+      <button type="submit" class="btn btn-primary btn-sm">View Profile</button>
+      <button type="submit" class="btn btn-danger btn-sm">Unsubscribe</button>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+<div class = "container col-md-9">
+<div class = "alert alert-danger mt-3 ml-4">
+<div class="content-section">
+  <div class="media">
+    <img class="rounded-circle account-img mr-3" src="https://i.stack.imgur.com/34AD2.jpg" width = 75px height = 75px >
+    <div class="media-body">
+      <h2 class="account-heading">John Doe</h2>
+      <p class = "text-secondary">jvd4m@virginia.edu</p>
+      <button type="submit" class="btn btn-primary btn-sm">View Profile</button>
+      <button type="submit" class="btn btn-danger btn-sm">Unsubscribe</button>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+{% endblock %}

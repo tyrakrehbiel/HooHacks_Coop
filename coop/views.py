@@ -21,30 +21,44 @@ def upload(request):
 def settings(request):
     return render(request, 'coop/settings.html')
 
+def subscriptions(request):
+    return render(request, 'coop/subscriptions.html')
 
+# for the search engine
 def notes_list(request):
     notes = Notes.objects.all()
     return render(request, 'coop/notes_list.html', {
         'notes': notes
     })
 
+# for user specific notes feed
+def userNotes(request):
+    notes = Notes.objects.filter(created_by=request.user.username)
+    return render(request, 'coop/userNotes.html', {
+        'notes': notes
+    })
+
+# upload a note
 def upload_note(request):
     if request.method == 'POST':
         form = NoteForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
-            return redirect('notes_list') # Redirects to notes list after uploading
+            fs = form.save()
+            fs.created_by = request.user.username
+            fs.save()
+            return redirect('userNotes') # Redirects to notes list after uploading
     else:
         form = NoteForm()
     return render(request, 'coop/upload_note.html', {
         'form': form
     })
 
+# delete a note
 def delete_note(request, pk):
     if request.method == 'POST':
         note = Notes.objects.get(pk=pk)
         note.delete()
-        return redirect('notes_list')
+        return redirect('userNotes')
 
 def about(request):
     return render(request, 'coop/about.html')

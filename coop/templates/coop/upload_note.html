@@ -1,10 +1,36 @@
 {% extends 'coop/base.html' %}
 
 {% block content %}
-  <h2>Upload a Note</h2>
-  <form method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Upload File</button>
-  </form>
+<div class = "container">
+  <div class="sidenav">
+    <img class="rounded-circle account-img ml-3" src="{{ user.socialaccount_set.all.0.get_avatar_url }}" width = 55px height = 55px >
+    <span> {{user.username}}</span>
+    <a href="profile/subscriptions/">Subscriptions</a>
+    <a href="profile/userNotes/">My Notes</a>
+    <a href="profile/upload/">Upload Notes</a>
+    <a href="profile/settings/">Settings</a>
+  </div>
+</div>
+<div class="container">
+  <h1>
+    <center>
+      Upload a Note
+    </center>
+  </h1>
+</div>
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 col-md-12">
+        <div class="card mb-4">
+          <div class="card-body">
+            <form method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button type="submit" class="btn btn-primary">Upload File</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock %}
