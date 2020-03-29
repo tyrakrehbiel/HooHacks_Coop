@@ -1,36 +1,35 @@
 {% extends 'coop/base.html' %}
+{% load static %}
+{% load socialaccount %}
+{% providers_media_js %}
 
 {% block content %}
-  <h2>List of Notes</h2>
-  <a href="{% url 'upload_note' %}" class="btn btn-primary">Upload Notes</a>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Course Name</th>
-        <th>Topic</th>
-        <th>Description</th>
-        <th>Download</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for note in notes %}
-      <tr>
-        <td>{{note.courseName}}</td>
-        <td>{{note.topic}}</td>
-        <td>{{note.description}}</td>
-        <td>
-          <a href="{{ note.noteFile.url }}" class="btn btn-primary btn-sm">
-            Download Notes
-          </a>
-        </td>
-        <td>
-          <form action="{% url 'delete_note' note.pk %}" method="post">
+  <div class="container">
+    <h1>
+      <center>
+        Search Our Notes
+        <img src="{% static 'images/coop.png' %}" width=80px height=80px>
+        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+      </center>
+    </h1>
+  </div>
+
+  {% for note in notes %}
+    <div class="container">
+      <div class="card">
+        <div class="card-header">
+          Course: {{note.courseName}}
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Topic: {{note.topic}}</h5>
+          <p class="card-text">Description: {{note.description}}</p>
+          <a href="{{ note.noteFile.url }}" class="btn btn-primary btn-sm">Download Notes</a>
+          <!-- <form action="{% url 'delete_note' note.pk %}" method="post">
             {% csrf_token %}
             <button type="submit" class="btn btn-danger btn-sm">Delete Note</button>
-          </form>
-        </td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+          </form> -->
+        </div>
+      </div>
+    </div>
+  {% endfor %}
 {% endblock %}
